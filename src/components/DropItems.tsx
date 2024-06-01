@@ -22,7 +22,7 @@ function DropItems() {
         return () => {
             clearInterval(timer)
         }
-    }, [open, indexItem])
+    }, [openMenu, indexItem])
 
 
     if (!openMenu) return

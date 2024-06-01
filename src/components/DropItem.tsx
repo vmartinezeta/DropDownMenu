@@ -6,10 +6,16 @@ type Props = {
 }
 
 
-function DropItem({ onSelected, text, isNew}: Props) {
+function DropItem({ onSelected, text, isNew }: Props) {
+  const newItem = ["drop__btn", "drop__btn--selected"]
+
+  if (!isNew) {
+    newItem.pop()
+  }
+
   return <div
     onClick={() => onSelected(text)}
-    className={`drop__btn ${isNew ? "drop__btn--selected" : undefined}`}
+    className={newItem.join(" ")}
   >{text}</div>
 }
 

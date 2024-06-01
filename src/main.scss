@@ -26,6 +26,7 @@ body {
 	inset: 0;
 	margin: auto;
 	border: 2px solid #0000001f;
+
 	&__title {
 		font-size: 2em;
 		text-align: center;
@@ -40,18 +41,23 @@ body {
 	position: relative;
 	inset: 0;
 	margin: auto;
-	&::before {
-		content: "";
-		display: block;
+
+	&__icon {
 		width: 30px;
 		height: 30px;
 		background: #00000061;
-		position: absolute;		
+		position: absolute;
 		right: 0;
 		top: 15px;
 		margin-right: 5px;
-		clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+		clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);		
+		&--open {
+			transition: transform 500ms linear;
+			transform: rotate(180deg);
+			clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+		}
 	}
+
 
 	&__input {
 		width: 100%;
@@ -63,6 +69,7 @@ body {
 		cursor: pointer;
 	}
 
+
 	&__btn {
 		width: 100%;
 		height: 60px;
@@ -72,6 +79,7 @@ body {
 		color: #fff;
 		font-weight: 600;
 		padding: 20px;
+
 		&--selected {
 			opacity: 0;
 			animation: fadeIn 500ms 1 linear both;
@@ -90,6 +98,20 @@ body {
 		position: absolute;
 	}
 }
+
+
+.items {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+
+	&__empty {
+		font-size: 20px;
+		color: #ff0030d4;
+		text-align: center;
+	}
+}
+
 
 @keyframes fadeIn {
 	to {
